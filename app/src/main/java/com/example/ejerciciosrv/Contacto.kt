@@ -3,8 +3,12 @@ package com.example.ejerciciosrv
 import android.graphics.drawable.Drawable
 
 class Contacto(
-    nombre:String,
-    telefono:String,
-    correo:String,
-    foto: Drawable
-)
+    var nombre:String,
+    var telefono:String,
+    var correo:String,
+    var foto: Int
+){
+    init {
+        foto = R.drawable.contacto
+    }
+}

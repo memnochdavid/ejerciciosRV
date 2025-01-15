@@ -6,7 +6,11 @@ plugins {
 android {
     namespace = "com.example.ejerciciosrv"
     compileSdk = 35
-
+    buildFeatures {
+        //necesario
+        viewBinding=true
+        dataBinding=true
+    }
     defaultConfig {
         applicationId = "com.example.ejerciciosrv"
         minSdk = 28
