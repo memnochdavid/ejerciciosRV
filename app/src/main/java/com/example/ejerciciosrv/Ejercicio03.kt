@@ -25,11 +25,14 @@ class Ejercicio03 : AppCompatActivity() {
         )
         val lista_capturados = mutableListOf<Pokemon>()
 
-        val adaptador = PokemonAdaptador(lista_pokemon,lista_capturados)
-
+        val adaptador = PokemonAdaptador(lista_pokemon, lista_capturados, PokemonCapturadosAdaptador(lista_capturados))
+        val adaptadorCapturados = PokemonCapturadosAdaptador(lista_capturados)
 
         binding.rv3.layoutManager = LinearLayoutManager(this)
         binding.rv3.adapter = adaptador
+
+        binding.rv4.layoutManager = LinearLayoutManager(this)
+        binding.rv4.adapter = adaptadorCapturados
 
         binding.add.setOnClickListener {
             if (binding.textInputEditText.text.toString() != "") {
@@ -38,8 +41,5 @@ class Ejercicio03 : AppCompatActivity() {
                 binding.textInputEditText.text?.clear()
             }
         }
-
-
-
     }
 }
