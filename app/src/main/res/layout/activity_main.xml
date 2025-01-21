@@ -7,14 +7,85 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
+    <LinearLayout
+        android:id="@+id/uno"
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:paddingHorizontal="20dp"
-        tools:listitem="@layout/objeto_contacto"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/dos">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ejercicios de RecyclerView"
+            android:textSize="24sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dos"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/uno"
+        app:layout_constraintBottom_toTopOf="@+id/tres">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/boton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 01"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tres"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/dos"
+        app:layout_constraintBottom_toTopOf="@+id/cuatro">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/boton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 02"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cuatro"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tres"
+        app:layout_constraintBottom_toTopOf="@+id/cinco">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/boton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 03"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cinco"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/cuatro">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/boton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio 04"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

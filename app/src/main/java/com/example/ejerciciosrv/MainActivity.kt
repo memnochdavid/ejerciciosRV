@@ -1,5 +1,6 @@
 package com.example.ejerciciosrv
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -13,34 +14,27 @@ import com.example.ejerciciosrv.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-
-        var lista_contactos = mutableListOf<Contacto>(
-            Contacto("Juan","123456789","juan@gmail.com",R.drawable.contacto),
-            Contacto("Pepe","123456789","juan@gmail.com",R.drawable.contacto),
-            Contacto("Sergio","123456789","juan@gmail.com",R.drawable.contacto),
-        )
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-
-        val adaptador= ContactoAdaptador(lista_contactos)
-
-        binding.rv.layoutManager= LinearLayoutManager(this)
-        binding.rv.adapter= adaptador
-
-
-
-
-
-
+        binding.boton1.setOnClickListener {
+            val intent = Intent(this, Ejercicio01::class.java)
+            startActivity(intent)
+        }
+        binding.boton2.setOnClickListener {
+            val intent = Intent(this, Ejercicio02::class.java)
+            startActivity(intent)
+        }
 
     }
 }

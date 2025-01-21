@@ -37,8 +37,4 @@ class ContactoAdaptador(private val lista_contactos: MutableList<Contacto>) :
         holder.telefono.text=contacto_actual.telefono
         holder.foto.setImageResource(contacto_actual.foto)
     }
-
-
-
-
 }
