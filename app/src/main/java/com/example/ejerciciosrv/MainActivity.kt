@@ -35,6 +35,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Ejercicio02::class.java)
             startActivity(intent)
         }
+        binding.boton3.setOnClickListener {
+            val intent = Intent(this, Ejercicio03::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
